@@ -1,0 +1,45 @@
+$engine: 3
+$onesync: on
+name: RedDeadReduxCore
+version: 1.0.0
+author: RedDeadRedux Dev Team
+description: RedDeadReduxCore - A high-performance, modular RedM framework for immersive roleplay experiences
+
+tasks:
+  # Download and prepare framework
+  - action: download_github
+    src: https://github.com/brouznouf/fivem-mysql-async
+    ref: master
+    dest: ./tmp/mysql-async
+
+  - action: move_path
+    src: ./tmp/mysql-async
+    dest: ./resources/mysql-async
+
+  - action: remove_path
+    path: ./tmp
+
+  # Ensure required resources
+  - action: ensure_dir
+    path: ./resources/[framework]
+
+  # Configure server
+  - action: write_file
+    file: ./server.cfg
+    append: true
+    data: |
+      
+      # RedDeadReduxCore Configuration
+      ensure mysql-async
+      ensure [framework]/reddeadreduxcore
+      
+      # OneSync Configuration
+      set onesync on
+      set onesync_enableInfinity true
+      
+      # Framework Settings
+      setr framework:version "1.0.0"
+      setr framework:debug "false"
+
+  # Database configuration
+  - action: connect_database
