@@ -47,19 +47,3 @@ tasks:
   # Success message
   - action: waste_time
     seconds: 5
-
-  - action: log
-    message: |
-      ╔══════════════════════════════════════════════════════════╗
-      ║                                                          ║
-      ║        RedDeadReduxCore Installed Successfully!          ║
-      ║                                                          ║
-      ║  Next Steps:                                            ║
-      ║  1. Configure database in shared/config.lua             ║
-      ║  2. Add admin identifiers in server.cfg                 ║
-      ║  3. Start your server                                   ║
-      ║  4. Create your first character                         ║
-      ║                                                          ║
-      ║  Documentation: Check README.md                         ║
-      ║                                                          ║
-      ╚══════════════════════════════════════════════════════════╝
