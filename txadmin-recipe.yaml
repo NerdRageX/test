@@ -43,7 +43,3 @@ tasks:
 
   # Database configuration
   - action: connect_database
-
-  # Success message
-  - action: waste_time
-    seconds: 5
